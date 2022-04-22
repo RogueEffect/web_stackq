@@ -66,6 +66,7 @@ function shiftStacks() {
       stack1.removeChild(elem);
       stack2.appendChild(elem);
     }
+    stack2.scroll(0, -1000);
   }
 }
 
@@ -76,7 +77,7 @@ function enqueue() {
   input.value = '';
   input.focus();
   push('stack1', val);
-  if(stackSize('stack2') < 1)
+  if(size == 1)
     updatePeek(val);
   log('queued ' + val);
 }
