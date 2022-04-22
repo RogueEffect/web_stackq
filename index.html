@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Stack Queue</title>
+    <meta charset="UTF-8">
+    <link id="style" rel="stylesheet" href="style.css">
+    <script id="script" src="stackq.js"></script>
+    <script>
+    window.addEventListener('load', () => {
+      let attrs = ["src", "href"];
+      let date = Date.parse(new Date());
+      ["script", "style"].forEach((id, i) => {
+        let elem = document.getElementById(id);
+        elem[attrs[i]] += '?v=' + date;
+      });
+    }, false);
+    </script>
+  </head>
+  <body>
+    <h2>Stack Queue</h2>
+    <div class="queueContainer">
+      <div class="stackContainer">
+        <div>Stack 1</div>
+        <div id="stack1"></div>
+      </div>
+      <div class="stackContainer">
+        <div>Stack 2</div>
+        <div id="stack2"></div>
+      </div>
+    </div>
+    <div class="info">
+      <div>Size: <div id="size">0</div></div>
+      <div>Peek: <div id="peek">null</div></div>
+    </div>
+    <div class="operations">
+      <div><input id="input"><div class="button" onclick="enqueue()"><div>Enqueue</div></div></div>
+      <div><div class="button" onclick="dequeue()"><div>Dequeue</div></div></div>
+    </div>
+    <div id="console">
+      <div>Output Console</div>
+      <div>Console ready!</div>
+    </div>
+  </body>
+</html>
