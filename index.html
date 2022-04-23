@@ -31,7 +31,7 @@
     </div>
     <div class="info">
       <div>Size: <div id="size">0</div></div>
-      <div>Peek: <div id="peek">null</div></div>
+      <div>Front: <div id="front">null</div></div>
     </div>
     <div class="operations">
       <div><input id="input"><div class="button" onclick="enqueue()"><div>Enqueue</div></div></div>
@@ -39,8 +39,14 @@
     </div>
     <div class="console">
       <div>Output Console</div>
-      <div id="console">
+      <div id="console" class="collapse">
       </div>
+    </div>
+    <div class="fileSelect" style="display: none;">
+      <input type="file" id="filein">
+    </div>
+    <div id="open" class="button">
+      <div>Open</div>
     </div>
   </body>
 </html>

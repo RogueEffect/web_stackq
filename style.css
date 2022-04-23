@@ -121,16 +121,16 @@ body > div > div {
 
 .console {
   position: fixed;
-  top: 0px;
-  right: 24px;
-  flex-direction: column;
+  top: 16px;
+  right: 16px;
+  margin: 0;
   width: 200px;
-  height: 90vh;
+  flex-direction: column;
   font-size: 14px;
   background-color: #121212;
   color: #cccccc;
   border: double 3px #808080;
-  border-radius: 10px;
+  border-radius: 10px 10px 0 0;
 }
 
 .console > div {
@@ -147,6 +147,7 @@ body > div > div {
 }
 
 #console {
+  height: 90vh;
   overflow: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -154,4 +155,50 @@ body > div > div {
 
 #console::-webkit-scrollbar {
   display: none;
+}
+
+#console.collapse {
+  height: 0px;
+  overflow: hidden;
+}
+
+#open {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  margin: 0;
+  padding: 0;
+  width: 66px;
+  height: 28px;
+  font-size: 16px;
+}
+
+.fileSelect {
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 54px;
+  left: 16px;
+  width: 200px;
+  height: 70px;
+  background-color: #222222;
+  border: double 3px #eeeeee;
+  border-radius: 10px;
+}
+
+#filein {
+  display: flex;
+  margin: auto;
+  padding-left: 18px;
+}
+
+#filein::file-selector-button {
+  background-color: #222222;
+  color: #cccccc;
+  border-radius: 6px;
+}
+
+#filein::file-selector-button:hover {
+  border-style: inset;
+  background-color: #191919;
 }
