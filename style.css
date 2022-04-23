@@ -119,7 +119,7 @@ body > div > div {
   font-size: 20px;
 }
 
-#console {
+.console {
   position: fixed;
   top: 0px;
   right: 24px;
@@ -133,15 +133,25 @@ body > div > div {
   border-radius: 10px;
 }
 
-#console > div {
+.console > div {
   margin: 3px 0 0 6px;
 }
 
-#console > div:nth-child(1) {
+.console > div:nth-child(1) {
   margin: 2px auto;
   padding-bottom: 4px;
   width: 100%;
   font-weight: 600;
   text-align: center;
   border-bottom: double 3px #555555;
+}
+
+#console {
+  overflow: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#console::-webkit-scrollbar {
+  display: none;
 }

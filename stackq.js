@@ -2,7 +2,7 @@
 let size = 0;
 
 function toggleConsole() {
-  let con = document.getElementById('console');
+  let con = document.getElementById('console').parentNode;
   if(con.style.display == '')
     con.style.display = 'none';
   else
@@ -32,7 +32,7 @@ function push(id, data) {
   div.innerText = '' + data;
   val.appendChild(div);
   stack.appendChild(val);
-  stack.scroll(0, -1000);
+  stack.scrollTo({top: -stack.scrollHeight, behavior: 'smooth'});
   size++;
   updateSize();
 }
@@ -66,7 +66,7 @@ function shiftStacks() {
       stack1.removeChild(elem);
       stack2.appendChild(elem);
     }
-    stack2.scroll(0, -1000);
+    stack2.scrollTo({top: -stack2.scrollHeight, behavior: 'smooth'});
   }
 }
 
@@ -103,11 +103,16 @@ function log(msg) {
   let div = document.createElement('div');
   div.innerText = msg;
   con.appendChild(div);
-  con.scroll(0, 1000);
+  let options = {
+    top: con.scrollHeight + con.clientHeight,
+    behavior: 'smooth'
+  };
+  con.scrollTo(options);
 }
 
 window.addEventListener('load', () => {
   toggleConsole();
+  log('Console ready!');
   let input = document.getElementById('input');
   input.addEventListener('keyup', (e) => {
     if(e.code == 'Enter')
